@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweta Koirala's Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg-color-light: #F5E7DE;
+            --text-color-light: #333;
+            --bg-color-dark: #333;
+            --text-color-dark: #F5E7DE;
+            --primary-color: #F2BFA4;
+            --secondary-color: #F5E7DE;
+            --border-color-dark: #F2BFA4;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header button {
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            background-color: var(--secondary-color);
+            color: var(--text-color-light);
+            border-radius: 5px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .blog {
+            border: 2px solid var(--primary-color);
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dark-mode .blog {
+            border-color: var(--border-color-dark);
+        }
+
+        .blog:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog img {
+            width: 100%;
+            height: auto;
+        }
+
+        .blog-content {
+            padding: 15px;
+        }
+
+        .blog-content h2 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .dark-mode .blog-content h2 {
+            color: var(--secondary-color);
+        }
+
+        .blog-content a {
+            text-decoration: none;
+            color: var(--bg-color-dark);
+            font-weight: bold;
+        }
+
+        .dark-mode .blog-content a {
+            color: var(--text-color-dark);
+        }
+
+        .blog-content a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .blog {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sweta's Blogs</h1>
+        <button id="toggle-mode">
+            <i class="fas fa-moon"></i> Night Mode
+        </button>
+    </header>
+
+    <main>
+        <div class="blog">
+            <img src="https://via.placeholder.com/800x400" alt="Blog Image">
+            <div class="blog-content">
+                <h2><a href="blog1.html">How to Start a Blog</a></h2>
+                <p>Blogging is a great way to express your thoughts and share your expertise with the world. Click to read more!</p>
+            </div>
+        </div>
+
+        <div class="blog">
+            <img src="https://via.placeholder.com/800x400" alt="Blog Image">
+            <div class="blog-content">
+                <h2><a href="blog2.html">Top 5 Coding Practices</a></h2>
+                <p>Learn the best practices in coding that can make your development process more efficient and your code cleaner. Click to read more!</p>
+            </div>
+        </div>
+
+        <div class="blog">
+            <img src="https://via.placeholder.com/800x400" alt="Blog Image">
+            <div class="blog-content">
+                <h2><a href="blog3.html">Exploring JavaScript Frameworks</a></h2>
+                <p>JavaScript frameworks like React, Angular, and Vue have revolutionized web development. Click to read more!</p>
+            </div>
+        </div>
+
+        <div class="blog">
+            <img src="https://via.placeholder.com/800x400" alt="Blog Image">
+            <div class="blog-content">
+                <h2><a href="blog4.html">Why Responsive Design Matters</a></h2>
+                <p>In today’s world, having a responsive website is crucial. Click to read more!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Sweta Koirala. All rights reserved.
+    </footer>
+
+    <script>
+        const toggleModeButton = document.getElementById('toggle-mode');
+        toggleModeButton.addEventListener('click', () => {
+            const body = document.body;
+            const isDark = body.classList.toggle('dark-mode');
+            toggleModeButton.innerHTML = isDark 
+                ? '<i class="fas fa-sun"></i> Day Mode'
+                : '<i class="fas fa-moon"></i> Night Mode';
+        });
+    </script>
+</body>
+</html></div>

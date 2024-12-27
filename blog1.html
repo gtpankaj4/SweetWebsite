@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Start a Blog - Sweta Koirala's Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root {
+    --bg-color-light: #F5E7DE;
+    --text-color-light: #333;
+    --bg-color-dark: #333;
+    --text-color-dark: #F5E7DE;
+    --primary-color: #F2BFA4;
+    --secondary-color: #F5E7DE;
+    --border-color-dark: #F2BFA4;
+    --article-bg-color-light: #fff;
+    --article-bg-color-dark: #444;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: all 0.3s ease;
+}
+
+.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.dark-mode header button {
+    color: var(--text-color-dark);
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+article {
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--article-bg-color-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode article {
+    background-color: var(--article-bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+article h2 {
+    color: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    article {
+        margin: 10px;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <h1><a href="index.html">Sweta's Blogs</a></h1>
+    <button id="toggle-mode">
+        <i class="fas fa-moon"></i> Night Mode
+    </button>
+</header>
+
+<main>
+    <article class="article">
+        <h2>How to Start a Blog</h2>
+        <p>
+            Blogging is a fantastic way to express your thoughts, build an online presence, or even start a business.
+            Whether you’re blogging for fun or to reach a wide audience, these steps can help you get started:
+        </p>
+        <ol>
+            <li><strong>Choose a niche:</strong> Find a topic you're passionate about and can consistently write about.</li>
+            <li><strong>Pick a platform:</strong> Platforms like WordPress or Blogger make it easy to start a blog.</li>
+            <li><strong>Design your blog:</strong> Create a simple, user-friendly design with clear navigation.</li>
+            <li><strong>Write your first post:</strong> Share your story or provide helpful insights in your first article.</li>
+            <li><strong>Promote your blog:</strong> Use social media and SEO to bring readers to your blog.</li>
+        </ol>
+        <p>
+            Blogging can be rewarding and enjoyable. So, get started today and share your unique perspective with the world!
+        </p>
+        <p>
+            <strong>Do you want to check other blogs?</strong>
+            <ul>
+                <li><a href="blog2.html">Blog 2</a></li>
+                <li><a href="blog3.html">Blog 3</a></li>
+                <li><a href="blog4.html">Blog 4</a></li>
+            </ul>
+        </p>
+    </article>
+</main>
+
+<footer>
+    &copy; 2024 Sweta Koirala. All rights reserved.
+</footer>
+
+<script>
+const toggleModeButton = document.getElementById('toggle-mode');
+toggleModeButton.addEventListener('click', () => {
+    const body = document.body;
+    const isDark = body.classList.toggle('dark-mode');
+    toggleModeButton.innerHTML = isDark
+        ? '<b style="color: var(--text-color-light);"> <i class="fas fa-sun"></i>  Day Mode</b>'
+        : '<i class="fas fa-moon"></i> Night Mode';
+    toggleModeButton.style.color = isDark ? 'var(--text-color-dark)' : 'var(--text-color-light)';
+});
+</script>
+</body>
+</html>
